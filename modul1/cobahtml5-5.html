@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Atribut Datalist</title>    
+</head>
+<body>
+    <datalist id="id-kontak">
+        <option value="nurultaukid17@gmail.com" label="pribadi">
+        <option value="21081010013@student.upnjatim.ac.id" label="kampus">
+        <option value="taukidnurul17@gmail.com" label="Kebalik">
+    </datalist>
+
+        <form id="formulir" action="submit.php" method="post">
+            <label>kontak: </label>
+            <input type="email" name="email" list="id-kontak">
+            <input type="submit" value="kirim">
+        </form>
+</body>
+</html>
