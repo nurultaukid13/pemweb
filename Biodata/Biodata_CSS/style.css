@@ -1,0 +1,391 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style body */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Style untuk navbar */
+.navbar {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+}
+
+/* Style untuk logo */
+.navbar img {
+    margin-left: 20px;
+    height: 50px;
+    width: auto;
+    transition: filter 0.5s, box-shadow 0.5s;
+}
+
+.navbar img:hover {
+    filter: brightness(150%) drop-shadow(0 0 5px #fd5956);
+}
+
+/* Style untuk link di navbar */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 20px;
+    margin-right: 50px;
+}
+
+.navbar ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    background-image: linear-gradient(90deg, #fd5956 0%, #fd5956 100%);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    background-size: 50% 2px;
+    color: #fd5956;
+}
+
+/* Style untuk tombol portofolio */
+.navbar button {
+    margin-right: 20px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar button:hover {
+    background-color: #fd5956;
+    color: #fff;
+}
+
+#home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 0px;
+    background-image: url(img/peakpx.jpg);
+    background-size: cover;
+}
+
+.intro {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 15%;
+}
+
+.intro p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+.small {
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.medium {
+    font-family: monospace;
+    font-size: 2.5rem;
+    color: #fd5956;
+    margin-top: 5px;
+}
+
+.large {
+    font-size: 5rem;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.largetau {
+    font-size: 5rem;
+    font-family: sans-serif;
+    color: #333;
+    margin-left: 80px;
+}
+
+i {
+    font-family: monospace;
+}
+
+.large.red {
+    color: #fd5956;
+    margin-left: 5px;
+}
+
+.description {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 70%;
+}
+
+.social-media {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.social-media img:hover {
+    filter: brightness(150%) drop-shadow(0 0 15px #fd5956);
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    margin-right: 40px;
+    border-radius: 5px;
+    transition: filter 0.5s, box-shadow 0.5s;
+}
+
+.profile-picture img {
+    height: 100%;
+}
+
+.profile-picture::after {
+    content: "";
+    display: block;
+    height: 30%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.profile-picture {
+    width: 50%;
+    margin-top: 35px;
+    height: 100%;
+    background-image: url(img/cover2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.cv {
+    margin-right: 20px;
+    background-color: #fd5956;
+    border: none;
+    color: #fff;
+    padding: 12px 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    box-shadow: 0px 0px 30px 0px rgba(161, 35, 35, 0.7);
+}
+
+.cv:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+#aboutMe {
+    height: 100vh;
+    padding-top: 0px;
+    background-image: url(img/Graphics\ Asset\ Of\ Orange\ Smoke\ Background.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.konten {
+    text-align: center;
+    width: 50%;
+}
+
+#aboutMe b {
+    font-size: 50px;
+    padding-top: 0px;
+    color: #333;
+}
+
+#aboutMe img {
+    height: 400px;
+    margin-top: 30px;
+}
+
+#bahasa {
+    text-align: center;
+    margin: auto;
+    height: 100vh;
+    background-image: url(img/Graphics\ Asset\ Of\ Orange\ Smoke\ Background2.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-box {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.language {
+    padding: 20px;
+    width: 30%;
+    margin-right: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 8px 10px rgba(250, 108, 108, 0.973);
+}
+
+.language img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#bahasa b {
+    font-size: 50px;
+    color: #333;
+}
+
+.language p {
+    margin-top: 40px;
+    font-family: monospace;
+    text-align: center;
+    color: #333;
+}
+
+.language h3 {
+    font-size: 20px;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+#bahasa i {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+}
+
+#portofolio {
+    text-align: center;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: url(img/portofolio.png);
+    background-size: cover;
+}
+
+#portofolio b {
+    font-size: 50px;
+    color: #333;
+}
+
+.collage {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.collage div {
+    width: calc(33.33% - 10px);
+    height: 150px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.collage div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-right: 50px;
+    border-radius: 10px;
+}
+
+.kontenpor{
+    padding-top: 100px;
+    text-align: center;
+    width: 50%;
+}
+#kontak {
+    text-align: center;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: url(img/kontak.jpg);
+    background-size: cover;
+}
+
+.kontenkon{
+    padding-top: 50px;
+    text-align: center;
+    width: 50%;
+}
+
+#kontak b {
+    font-size: 50px;
+    color: #333;
+}
+
+.gambar img{
+    padding-top: 30px;
+    height: 250px;
+    margin-top: 5px;
+}
+
+.social-mediakon {
+    margin-top: 90px;
+    margin-left: 30%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 50%;
+}
+
+.social-mediakon img:hover {
+    filter: brightness(150%) drop-shadow(0 0 15px #fd5956);
+}
+
+.social-mediakon img {
+    width: 40px;
+    height: auto;
+    margin-right: 100px;
+    border-radius: 5px;
+    transition: filter 0.5s, box-shadow 0.5s;
+}
