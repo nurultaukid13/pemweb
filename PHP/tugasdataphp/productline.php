@@ -20,7 +20,7 @@
         </ul>
     </nav>
 
-    <div class="tabel">
+    <div>
         <table>
             <thead>
                 <tr>
