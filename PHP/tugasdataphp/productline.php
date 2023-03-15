@@ -12,15 +12,22 @@
     <title>Classic Model</title>
 </head>
 <body>
-    <nav>
-        <h2>Classic Model</h2>
-        <ul>
-            <li><a href="employees.php">Employees</a></li>
-            <li><a href="#">Productlines</a></li>
-        </ul>
-    </nav>
-
     <div>
+        <nav>
+            <h2>Classic Model</h2>
+            <ul>
+                <li><a href="employees.php">Employees</a></li>
+                <li><a href="#">Productlines</a></li>
+                <li><a href="customers.php">Customers</a></li>
+                <li><a href="product.php">Product</a></li>
+            </ul>
+        </nav>
+    </div>
+        
+    <a href="customers.php" type="button" class="button">
+        <i>Tambahkan Data</i>
+    </a>
+
         <table>
             <thead>
                 <tr>
@@ -34,7 +41,7 @@
                 <tr>
                     <?php
                         $query = "SELECT * FROM productlines";
-                        $result = mysqli_query($conn,$query);
+                        $result = mysqli_query(koneksi_db(),$query);
 
                         if(mysqli_num_rows($result)>0){
                             while($row = mysqli_fetch_assoc($result)){
@@ -54,6 +61,5 @@
                 ?>
             </tbody>
         </table>
-    </div>
 </body>
 </html>

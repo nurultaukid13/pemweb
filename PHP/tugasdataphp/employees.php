@@ -19,68 +19,68 @@ include('koneksi.php');
         <ul>
             <li><a href="#">Employees</a></li>
             <li><a href="productline.php">Productlines</a></li>
+            <li><a href="customers.php">Customers</a></li>
+            <li><a href="product.php">Product</a></li>
         </ul>
     </nav>
 
-    <div class="tabel-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Employees Number</th>
-                    <th>Last Name</th>
-                    <th>First Name</th>
-                    <th>Extension</th>
-                    <th>Email</th>
-                    <th>Office Code</th>
-                    <th>Reports To</th>
-                    <th>Job Tittle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $query = "SELECT * FROM employees";
-                $result = mysqli_query($conn, $query);
+    <table>
+        <thead>
+            <tr>
+                <th>Employees Number</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Extension</th>
+                <th>Email</th>
+                <th>Office Code</th>
+                <th>Reports To</th>
+                <th>Job Tittle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $query = "SELECT * FROM employees";
+            $result = mysqli_query(koneksi_db(), $query);
 
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        ?>
-                        <tr>
-                            <td>
-                                <?php echo $row['employeeNumber']; ?>
-                            </td>
-                            <td>
-                                <?php echo $row['lastName']; ?>
-                            </td>
-                            <td>
-                                <?php echo $row['firstName']; ?>
-                            </td>
-                            <td>
-                                <?php echo $row['extension']; ?>
-                            </td>
-                            <td>
-                                <?php echo $row['email']; ?>
-                            </td>
-                            <td>
-                                <?php echo $row['officeCode']; ?>
-                            </td>
-                            <td>
-                                <?php echo $row['reportsTo']; ?>
-                            </td>
-                            <td>
-                                <?php echo $row['jobTitle']; ?>
-                            </td>
-                            <?php
-                    }
-                    mysqli_free_result($result);
-                } else {
-                    echo "Data tidak ada";
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <tr>
+                        <td>
+                            <?php echo $row['employeeNumber']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['lastName']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['firstName']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['extension']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['email']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['officeCode']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['reportsTo']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['jobTitle']; ?>
+                        </td>
+                        <?php
                 }
-                mysqli_close($conn);
-                ?>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                mysqli_free_result($result);
+            } else {
+                echo "Data tidak ada";
+            }
+            mysqli_close($conn);
+            ?>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
