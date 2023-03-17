@@ -63,7 +63,7 @@ if(isset($_GET['ubah'])){
             <label for="productname">
                 Product Name
             </label>
-            <input required type="text" name="productname" id="productname"
+            <input type="text" name="productname" id="productname"
                 placeholder="Masukkan Product Name" value="<?php echo $productname; ?>">
             <label for="producline">
                 Product Line
@@ -73,32 +73,32 @@ if(isset($_GET['ubah'])){
             <label for="productscale">
                 Product Scale
             </label>
-            <input required type="text" name="productscale" id="productscale"
+            <input type="text" name="productscale" id="productscale"
                 placeholder="Cth: 1:10" value="<?php echo $productscale; ?>">
             <label for="productvendor">
                 Product Vendor
             </label>
-            <input required type="text" name="productvendor" id="productvendor"
+            <input type="text" name="productvendor" id="productvendor"
                 placeholder="Masukkan Product vendor" value="<?php echo $productvendor; ?>">
             <label for="productdescription">
                 Product description
             </label>
-            <input required type="text" name="productdescription" id="productdescription"
+            <input type="text" name="productdescription" id="productdescription"
                 placeholder="Masukkan Product description" value="<?php echo $productdescription; ?>">
             <label for="quantityinstock">
                 Quantity In Stock
             </label>
-            <input required type="text" name="quantityinstock" id="quantityinstock"
+            <input type="text" name="quantityinstock" id="quantityinstock"
                 placeholder="Cth: 7820" value="<?php echo $quantityinstock; ?>">
             <label for="buyprice">
                 Buy Price
             </label>
-            <input required type="text" name="buyprice" id="buyprice"
+            <input type="text" name="buyprice" id="buyprice"
                 placeholder="Cth: 89.22" value="<?php echo $buyprice; ?>">
             <label for="msrp">
                 MSRP
             </label>
-            <input required type="text" name="msrp" id="msrp"
+            <input type="text" name="msrp" id="msrp"
                 placeholder="Cth: 98.70" value="<?php echo $msrp; ?>">
             <?php
             if (isset($_GET['ubah'])) {

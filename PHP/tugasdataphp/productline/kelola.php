@@ -57,7 +57,7 @@ if(isset($_GET['ubah'])){
             <label for="htmlDescription">
                 HTML Description
             </label>
-            <input required type="text" name="htmldescription" id="htmldescription"
+            <input type="text" name="htmldescription" id="htmldescription"
                 placeholder="Masukkan HTML Description" value="<?php echo $htmldescription; ?>">
             <label for="image">
                 Image

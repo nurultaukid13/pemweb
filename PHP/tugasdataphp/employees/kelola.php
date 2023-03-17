@@ -61,7 +61,7 @@ if (isset($_GET['ubah'])) {
             <label for="lastname">
                 Last Name
             </label>
-            <input required type="text" name="lastname" id="lastname" placeholder="Masukkan Last Name"
+            <input type="text" name="lastname" id="lastname" placeholder="Masukkan Last Name"
                 value="<?php echo $lastname; ?>">
             <label for="firstname">
                 First Name
@@ -71,27 +71,27 @@ if (isset($_GET['ubah'])) {
             <label for="extension">
                 Extensiom
             </label>
-            <input required type="text" name="extension" id="extension" placeholder="Cth: x2133"
+            <input type="text" name="extension" id="extension" placeholder="Cth: x2133"
                 value="<?php echo $extension; ?>">
             <label for="email">
                 Email
             </label>
-            <input required type="text" name="email" id="email" placeholder="Masukkan Email"
+            <input type="text" name="email" id="email" placeholder="Masukkan Email"
                 value="<?php echo $email; ?>">
             <label for="officecode">
                 Office Code
             </label>
-            <input required type="text" name="officecode" id="officecode" placeholder="Cth: 1(harus sesuai dengan yang ada)"
+            <input type="text" name="officecode" id="officecode" placeholder="Cth: 1(harus sesuai dengan yang ada)"
                 value="<?php echo $officecode; ?>">
             <label for="reportsto">
                 Reports To
             </label>
-            <input required type="text" name="reportsto" id="reportsto" placeholder="Cth: 1102(harus sesuai dengan yang ada)"
+            <input type="text" name="reportsto" id="reportsto" placeholder="Cth: 1102(harus sesuai dengan yang ada)"
                 value="<?php echo $reportsto; ?>">
             <label for="jobtittle">
                 Job Title
             </label>
-            <input required type="text" name="jobtittle" id="jobtittle" placeholder="Cth: President"
+            <input type="text" name="jobtittle" id="jobtittle" placeholder="Cth: President"
                 value="<?php echo $jobtittle; ?>">
             <?php
             if (isset($_GET['ubah'])) {
