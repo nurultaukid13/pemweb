@@ -101,7 +101,7 @@ session_start();
                             <a href="../product/kelola.php?ubah=<?php echo $row['productCode']; ?>" type="button" class="btn_edit">
                                 <i>Edit</i>
                             </a>
-                            <a href="../product/proses.php?hapus=<?php echo $row['producCode']; ?>" type="button"
+                            <a href="../product/proses.php?hapus=<?php echo $row['productCode']; ?>" type="button"
                                 class="btn_hapus">
                                 <i>Hapus</i>
                             </a>
