@@ -1,5 +1,6 @@
 <?php
 include('koneksi.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -9,12 +10,17 @@ include('koneksi.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Classic Model</title>
 </head>
 
 <body>
     <nav>
+        <div class="buttonposition">
+            <a href="../employees/kelola.php" type="button" class="button">
+                <i>Tambahkan Data</i>
+            </a>
+        </div>
         <h2>Classic Model</h2>
         <ul>
             <li><a href="#">Employees</a></li>
@@ -23,6 +29,21 @@ include('koneksi.php');
             <li><a href="product.php">Product</a></li>
         </ul>
     </nav>
+
+    <div style="height:50px"></div>
+
+    <?php
+    if (isset($_SESSION['eksekusi'])) {
+        echo '<div class="alert-success">';
+        echo $_SESSION['eksekusi'];
+
+        // Hapus pesan dari session
+        unset($_SESSION['eksekusi']);
+        echo '</div>';
+        session_destroy();
+    }
+    ;
+    ?>
 
     <table>
         <thead>
@@ -35,16 +56,18 @@ include('koneksi.php');
                 <th>Office Code</th>
                 <th>Reports To</th>
                 <th>Job Tittle</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            <?php
-            $query = "SELECT * FROM employees";
-            $result = mysqli_query(koneksi_db(), $query);
+            <tr>
+                <?php
+                $query = "SELECT * FROM employees";
+                $result = mysqli_query(koneksi_db(), $query);
 
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
                     <tr>
                         <td>
                             <?php echo $row['employeeNumber']; ?>
@@ -70,15 +93,25 @@ include('koneksi.php');
                         <td>
                             <?php echo $row['jobTitle']; ?>
                         </td>
-                        <?php
+                        <td>
+                            <a href="../employees/kelola.php?ubah=<?php echo $row['employeeNumber']; ?>" type="button"
+                                class="btn_edit">
+                                <i>Edit</i>
+                            </a>
+                            <a href="../employees/proses.php?hapus=<?php echo $row['employeeNumber']; ?>" type="button"
+                                class="btn_hapus">
+                                <i>Hapus</i>
+                            </a>
+                        </td>
+                    </tr>
+                    <?php
+                    }
+                    mysqli_free_result($result);
+                } else {
+                    echo "Data tidak ada";
                 }
-                mysqli_free_result($result);
-            } else {
-                echo "Data tidak ada";
-            }
-            mysqli_close($conn);
-            ?>
-            </tr>
+                mysqli_close(koneksi_db());
+                ?>
         </tbody>
     </table>
 </body>
