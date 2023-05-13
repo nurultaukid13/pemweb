@@ -1,4 +1,5 @@
 <?php
+    require_once('Product.php');
     class CdCabinet extends Product{
         private $capacity, $model;
 
@@ -8,9 +9,9 @@
             $this->model=$model;
         }
 
-        public function setPricecdr(){
-            $this->price = $this->price + (0.15 * $this->price) - (($this->discount/100) * $this->price);
-        }
+        public function setPrice($harga=0){
+                parent::setPrice($harga + (0.15 * $harga));
+        } 
 
         public function getCapacity(){
             return $this->capacity;

@@ -1,4 +1,5 @@
 <?php
+    require_once('Product.php');
     class CdMusic extends Product{
         private $artist, $genre;
 
@@ -8,12 +9,12 @@
             $this->genre=$genre;
         }
 
-        public function setPricecdm(){
-            $this->price = $this->price + (0.1 * $this->price) - (($this->discount/100) * $this->price);
+        public function setPrice($harga=0){
+                parent::setPrice($harga + (0.1 * $harga));
         }
 
-        public function setDiscountcdm(){
-            $this->discount = $this->discount + 5;
+        public function setDiscount($diskon){
+            parent::setDiscount($diskon+5);
         }
 
         public function getArtist(){
