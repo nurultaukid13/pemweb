@@ -32,23 +32,24 @@ if (isset($_POST['aksi'])) {
             foreach ($read as $buku) {
                 $bukuinfo = explode('-', $buku);
                 if ($bukuinfo[0] === $kodebuku) {
-                        // Menghapus file cover buku jika ada
-                        $cover = trim($bukuinfo[5]);
-                        if (!empty($cover)) {
-                            $cover_path = 'img/' . $cover;
-                            if (file_exists($cover_path)) {
-                                unlink($cover_path);
-                            }
-                    }
 
                     // Unggah gambar baru
                     if (isset($_FILES['cover']) && $_FILES['cover']['error'] === 0) {
-                        if(($_FILES['cover']) !== ''){
+                        if (($_FILES['cover']) !== '') {
+                            // Menghapus file cover buku jika ada
+                            $cover = trim($_POST['existing_cover']);
+                            if (!empty($cover)) {
+                                $cover_path = 'img/' . $cover;
+                                if (file_exists($cover_path)) {
+                                    unlink($cover_path);
+                                }
+                            }
+
                             $cover = $_FILES['cover']['name'];
                             $cover_tmp = $_FILES['cover']['tmp_name'];
                             move_uploaded_file($cover_tmp, 'img/' . $cover);
-                            $buku = $kodebuku . '-' . $judul . '-' . $pengarang . '-' . $penerbit . '-' . $tahunTerbit . '-' . $cover. PHP_EOL;
-                        }else{
+                            $buku = $kodebuku . '-' . $judul . '-' . $pengarang . '-' . $penerbit . '-' . $tahunTerbit . '-' . $cover . PHP_EOL;
+                        } else {
                             $cover = $_POST['existing_cover'];
                             $buku = $kodebuku . '-' . $judul . '-' . $pengarang . '-' . $penerbit . '-' . $tahunTerbit . '-' . $cover;
                         }
